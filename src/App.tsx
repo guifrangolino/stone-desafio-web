@@ -1,5 +1,11 @@
+import { Main } from "./components/Main"
+
 function App() {
-  return <h1>Stone - Desafio Web</h1>
+  return (
+    <Main>
+      <h1>Stone - Desafio Web</h1>
+    </Main>
+  )
 }
 
 export default App
