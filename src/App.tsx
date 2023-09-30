@@ -1,10 +1,11 @@
 import { Elipse } from "./components/Elipse"
+import { Header } from "./components/Header"
 import { Main } from "./components/Main"
 
 function App() {
   return (
     <Main>
-      <h1>Stone - Desafio Web</h1>
+      <Header />
       <Elipse />
     </Main>
   )

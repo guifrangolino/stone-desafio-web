@@ -3,9 +3,10 @@ import { styled } from 'styled-components'
 export const Container = styled.div`
   position: absolute;
   right: 0;
-  top: 250px;
+  top: 240px;
+  top: 31vh;
   right: 450px;
-  right: 28.8%;
+  right: 29vw;
 
   svg {
     position: absolute;
