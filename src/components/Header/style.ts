@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 
 export const Container = styled.header`
-  padding: 32px;
+  /* padding: 32px; */
   display: flex;
   gap: 48px;
 `

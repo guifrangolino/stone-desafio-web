@@ -8,4 +8,5 @@ export const Container = styled.main`
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
+  padding: 32px;
 `
