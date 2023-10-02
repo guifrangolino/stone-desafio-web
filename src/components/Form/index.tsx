@@ -1,27 +1,57 @@
 import { TransferArrow } from "../icons/TransferArrow";
 import { Container, TipoCompraContainer, ValorContainer } from "./style";
-import { FormEvent } from "react"
+import { FormEvent, useRef, useState } from "react"
+import CurrencyInput from 'react-currency-input-field';
 
 
 export function Form() {
+  const valor = useRef<number | null>(null)
+  const taxa = useRef<number | null>(null)
+  const [formValido, setFormValido] = useState(false)
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  function handleNumChange(event: FormEvent<HTMLInputElement>) {
-    // console.log(event);
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault()
+
+    if (valor.current === null || taxa.current === null) return
+  }
+
+  function isFormValido() {
+    valor.current && taxa.current ? setFormValido(true) : setFormValido(false)
   }
 
   return (
-    <Container>
+    <Container onSubmit={handleSubmit}>
 
       <ValorContainer>
         <div>
           <label htmlFor="dolar">Dólar</label>
-          <input type="number" id="dolar" maxLength={13} onChange={handleNumChange} />
+          <CurrencyInput
+            id="dolar"
+            prefix="$ "
+            allowNegativeValue={false}
+            placeholder="$ 1,00"
+            maxLength={10}
+            onValueChange={(value) => {
+              value ? valor.current = Number(value) : valor.current = null
+              isFormValido()
+            }}
+          />
         </div>
 
         <div>
           <label htmlFor="taxa">Taxa do Estado</label>
-          <input type="number" id="taxa" maxLength={13} onChange={handleNumChange} />
+          <CurrencyInput
+            id="taxa"
+            suffix=" %"
+            allowDecimals={false}
+            allowNegativeValue={false}
+            placeholder="0 %"
+            maxLength={3}
+            onValueChange={(value) => {
+              value ? taxa.current = Number(value) : taxa.current = null
+              isFormValido()
+            }}
+          />
         </div>
       </ValorContainer>
 
@@ -39,7 +69,7 @@ export function Form() {
         </div>
       </TipoCompraContainer>
 
-      <button type="submit">
+      <button type="submit" disabled={!formValido}>
         <TransferArrow />
         Converter
       </button>

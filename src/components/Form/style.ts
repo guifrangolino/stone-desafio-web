@@ -14,7 +14,7 @@ export const Container = styled.form`
     gap: 16px;
     border-radius: 8px;
     border: 1px solid #008B57;
-    background: #8C9CAD;
+    background: #008B57;
     color: #fff;
     font-family: 'Sharon Sans', sans-serif;
     font-size: 16px;
@@ -22,6 +22,10 @@ export const Container = styled.form`
     font-weight: 600;
     line-height: 24px;
     cursor: pointer;
+
+    &:disabled {
+      background: #8C9CAD;
+    }
 
     svg {
       width: 16px;
@@ -54,6 +58,7 @@ export const ValorContainer = styled.div`
     font-weight: 400;
     line-height: 24px;
     box-shadow: 0px 8px 4px 0px rgba(13, 17, 27, 0.08);
+    outline-color: #008B57;
 
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
@@ -98,9 +103,11 @@ export const TipoCompraContainer = styled.div`
     
     label {
       color: #2E3742;
-      font-family: 'Circular Std', sans-serif;
+      /* font-family: 'Circular Std', sans-serif; */
       font-size: 16px;
       font-style: normal;
+      font-weight: 450;
+      letter-spacing: 0.5px;
       line-height: 24px;
       cursor: pointer;
     }
