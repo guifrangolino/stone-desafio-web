@@ -3,8 +3,13 @@ import { Container, TipoCompraContainer, ValorContainer } from "./style";
 import { FormEvent, useRef, useState } from "react"
 import CurrencyInput from 'react-currency-input-field';
 
+type FormProps = {
+  setSubmited: (arg0: boolean) => void
+  setValor: (arg0: number) => void
+  setTaxa: (arg0: number) => void
+}
 
-export function Form() {
+export function Form({ setSubmited, setValor, setTaxa }: FormProps) {
   const valor = useRef<number | null>(null)
   const taxa = useRef<number | null>(null)
   const [formValido, setFormValido] = useState(false)
@@ -13,6 +18,10 @@ export function Form() {
     event.preventDefault()
 
     if (valor.current === null || taxa.current === null) return
+
+    setValor(valor.current)
+    setTaxa(taxa.current)
+    setSubmited(true)
   }
 
   function isFormValido() {
