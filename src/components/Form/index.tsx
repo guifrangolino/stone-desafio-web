@@ -7,11 +7,13 @@ type FormProps = {
   setSubmited: (arg0: boolean) => void
   setValor: (arg0: number) => void
   setTaxa: (arg0: number) => void
+  setTipo: (arg0: string) => void
 }
 
-export function Form({ setSubmited, setValor, setTaxa }: FormProps) {
+export function Form({ setSubmited, setValor, setTaxa, setTipo }: FormProps) {
   const valor = useRef<number | null>(null)
   const taxa = useRef<number | null>(null)
+  const [tipoCompra, setTipoCompra] = useState<string>('dinheiro')
   const [formValido, setFormValido] = useState(false)
 
   function handleSubmit(event: FormEvent) {
@@ -21,11 +23,12 @@ export function Form({ setSubmited, setValor, setTaxa }: FormProps) {
 
     setValor(valor.current)
     setTaxa(taxa.current)
+    setTipo(tipoCompra)
     setSubmited(true)
   }
 
   function isFormValido() {
-    valor.current && taxa.current ? setFormValido(true) : setFormValido(false)
+    valor.current && (taxa.current || taxa.current === 0) ? setFormValido(true) : setFormValido(false)
   }
 
   return (
@@ -68,12 +71,12 @@ export function Form({ setSubmited, setValor, setTaxa }: FormProps) {
         <h2>Tipo de compra</h2>
 
         <div>
-          <input type="radio" name="tipoCompra" value="Dinheiro" id="dinheiro" required defaultChecked />
+          <input type="radio" name="tipoCompra" value="dinheiro" id="dinheiro" required checked={tipoCompra === 'dinheiro'} onChange={(e) => setTipoCompra(e.target.value)} />
           <label htmlFor="dinheiro">Dinheiro</label>
         </div>
 
         <div>
-          <input type="radio" name="tipoCompra" value="Cartão" id="cartao" required />
+          <input type="radio" name="tipoCompra" value="cartao" id="cartao" required checked={tipoCompra === 'cartao'} onChange={(e) => setTipoCompra(e.target.value)} />
           <label htmlFor="cartao">Cartão</label>
         </div>
       </TipoCompraContainer>
