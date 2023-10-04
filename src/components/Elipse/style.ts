@@ -4,9 +4,13 @@ export const Container = styled.div`
   position: absolute;
   right: 0;
   top: 240px;
-  top: 31vh;
+  top: 48vh;
   right: 450px;
-  right: 29vw;
+  right: 34vw;
+
+  @media (max-width: 958px) {
+    display: none;
+  }
 
   svg {
     position: absolute;

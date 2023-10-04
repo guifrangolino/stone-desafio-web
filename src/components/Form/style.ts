@@ -8,6 +8,10 @@ export const Container = styled.form`
   width: fit-content;
   gap: 32px;
 
+  @media (max-width: 666px) {
+    margin-top: 50px;
+  }
+
   button {
     display: flex;
     padding: 16px;
@@ -38,6 +42,10 @@ export const Container = styled.form`
 export const ValorContainer = styled.div`
   display: flex;
   gap: 24px;
+
+  @media (max-width: 666px) {
+    flex-direction: column;
+  }
   
   div {
     display: flex;

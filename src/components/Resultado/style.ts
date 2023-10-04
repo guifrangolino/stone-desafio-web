@@ -7,6 +7,10 @@ export const Container = styled.div`
   align-items: flex-start;
   gap: 32px;
 
+  @media (max-width: 666px) {
+    margin-top: 50px;
+  }
+
   button {
     display: flex;
     padding: 16px;

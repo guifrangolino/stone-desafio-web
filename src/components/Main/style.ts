@@ -9,4 +9,8 @@ export const Container = styled.main`
   background-position: right center;
   background-repeat: no-repeat;
   padding: 32px;
+
+  @media (max-width: 958px) {
+    background-image: none;
+  }
 `

@@ -43,7 +43,7 @@ export function Resultado({ setSubmited, valor, taxa, tipo }: ResultadoProps) {
 
       <ResultadoValor>
         <p>O resultado do cálculo é</p>
-        <span>R$ {calcularResultado(valorComTaxa + ((valorIOF / 100) * valorComTaxa))}</span>
+        <span>{calcularResultado(valorComTaxa + ((valorIOF / 100) * valorComTaxa))}</span>
       </ResultadoValor>
 
       <ResultadoInfo>
