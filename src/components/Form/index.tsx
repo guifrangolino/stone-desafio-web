@@ -39,10 +39,13 @@ export function Form({ setSubmited, setValor, setTaxa, setTipo }: FormProps) {
           <label htmlFor="dolar">Dólar</label>
           <CurrencyInput
             id="dolar"
+            intlConfig={{ locale: 'en-US', currency: 'USD' }}
+            autoComplete="off"
             prefix="$ "
             allowNegativeValue={false}
             placeholder="$ 1,00"
             maxLength={10}
+            decimalScale={2}
             onValueChange={(value) => {
               value ? valor.current = Number(value) : valor.current = null
               isFormValido()
@@ -54,11 +57,14 @@ export function Form({ setSubmited, setValor, setTaxa, setTipo }: FormProps) {
           <label htmlFor="taxa">Taxa do Estado</label>
           <CurrencyInput
             id="taxa"
+            autoComplete="off"
             suffix=" %"
-            allowDecimals={false}
             allowNegativeValue={false}
             placeholder="0 %"
-            maxLength={3}
+            maxLength={4}
+            decimalsLimit={2}
+            decimalSeparator='.'
+            groupSeparator=','
             onValueChange={(value) => {
               value ? taxa.current = Number(value) : taxa.current = null
               isFormValido()
