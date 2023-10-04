@@ -28,7 +28,7 @@ export function Header() {
         <div>
           <p>{date.getUTCDate()} de {mesEmPortugues(date.getUTCMonth() + 1)} {date.getUTCFullYear()}</p>
           <p>|</p>
-          <p>{date.getUTCHours()}:00 UTC</p>
+          <p>{("0" + date.getUTCHours()).slice(-2)}:{("0" + date.getUTCMinutes()).slice(-2)} UTC</p>
         </div>
         <span>Dados de câmbio disponibilizados pela Morningstar.</span>
       </APIInfoContainer>
