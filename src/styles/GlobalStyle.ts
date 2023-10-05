@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import '../assets/CircularStd.otf'
 
 
 export const GlobalStyle = createGlobalStyle`
@@ -111,15 +110,6 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 900;
     font-style: italic;
     font-display: swap;
-  }
-
-  /* Circular Std */
-
-  @font-face {
-    font-family: 'Circular Std';
-    src: url({CircularStd})
-      format('opentype');
-      
   }
 
   * {
