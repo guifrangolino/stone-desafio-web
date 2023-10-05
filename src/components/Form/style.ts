@@ -17,9 +17,9 @@ export const Container = styled.form`
     padding: 16px;
     gap: 16px;
     border-radius: 8px;
-    border: 1px solid #008B57;
-    background: #008B57;
-    color: #fff;
+    border: 1px solid ${props => props.theme.colors.primary};
+    background: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.white};
     font-family: 'Sharon Sans', sans-serif;
     font-size: 16px;
     font-style: normal;
@@ -28,7 +28,7 @@ export const Container = styled.form`
     cursor: pointer;
 
     &:disabled {
-      background: #8C9CAD;
+      background: ${props => props.theme.colors.mediumGray2};
     }
 
     svg {
@@ -59,14 +59,14 @@ export const ValorContainer = styled.div`
     border: 1px solid rgba(13, 17, 27, 0.08);
     border-radius: 4px;
     padding: 16px;
-    color: #2E3742;
+    color: ${props => props.theme.colors.darkGray};
     font-family: 'Sharon Sans', sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
     box-shadow: 0px 8px 4px 0px rgba(13, 17, 27, 0.08);
-    outline-color: #008B57;
+    outline-color: ${props => props.theme.colors.primary};
 
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
@@ -81,7 +81,7 @@ export const ValorContainer = styled.div`
   }
 
   label {
-    color: #2E3742;
+    color: ${props => props.theme.colors.darkGray};
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -95,7 +95,7 @@ export const TipoCompraContainer = styled.div`
   gap: 16px;
 
   h2 {
-    color: #2E3742;
+    color: ${props => props.theme.colors.darkGray};
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -110,8 +110,7 @@ export const TipoCompraContainer = styled.div`
     cursor: pointer;
     
     label {
-      color: #2E3742;
-      /* font-family: 'Circular Std', sans-serif; */
+      color: ${props => props.theme.colors.darkGray};
       font-size: 16px;
       font-style: normal;
       font-weight: 450;
@@ -122,10 +121,10 @@ export const TipoCompraContainer = styled.div`
 
     input[type="radio"] {
       appearance: none;
-      background-color: #fff;
+      background-color: ${props => props.theme.colors.white};
       margin: 0;
       font: inherit;
-      color: #008B57;
+      color: ${props => props.theme.colors.primary};
       width: 24px;
       height: 24px;
       border: 0.15em solid currentColor;
@@ -142,7 +141,7 @@ export const TipoCompraContainer = styled.div`
         border-radius: 50%;
         transform: scale(0);
         transition: 120ms transform ease-in-out;
-        box-shadow: inset 1em 1em #008B57;
+        box-shadow: inset 1em 1em ${props => props.theme.colors.primary};
       }
 
       &:checked::before {

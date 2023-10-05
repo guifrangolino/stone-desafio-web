@@ -17,12 +17,12 @@ export const Container = styled.div`
     align-items: flex-start;
     gap: 16px;
     border-radius: 8px;
-    border: 1px solid #D7E0EB;
-    background: #FFF;
+    border: 1px solid ${props => props.theme.colors.mediumGray3};
+    background: ${props => props.theme.colors.white};
     box-shadow: 0px 8px 4px 0px rgba(13, 17, 27, 0.08);
     cursor: pointer;
 
-    color: #2E3742;
+    color: ${props => props.theme.colors.darkGray};
     font-family: 'Sharon Sans', sans-serif;
     font-size: 16px;
     font-style: normal;
@@ -39,7 +39,7 @@ export const ResultadoValor = styled.div`
   gap: 8px;
 
   p {
-    color: #45505E;
+    color: ${props => props.theme.colors.darkGray2};
     font-family: 'Sharon Sans', sans-serif;
     font-size: 20px;
     font-style: normal;
@@ -48,7 +48,7 @@ export const ResultadoValor = styled.div`
   }
 
   span {
-    color: #00AB63;
+    color: ${props => props.theme.colors.stoneGreen};
     font-family: 'Sharon Sans', sans-serif;
     font-size: 64px;
     font-style: normal;
@@ -64,7 +64,7 @@ export const ResultadoInfo = styled.div`
   gap: 16px;
 
   p {
-    color: #6E7E90;
+    color: ${props => props.theme.colors.mediumGray2};
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-style: normal;

@@ -1,7 +1,6 @@
 import { styled } from 'styled-components'
 
 export const Container = styled.header`
-  /* padding: 32px; */
   display: flex;
   gap: 48px;
 
@@ -29,7 +28,7 @@ export const APIInfoContainer = styled.div`
     gap: 20px;
     
     p {
-      color: #45505E;
+      color: ${props => props.theme.colors.darkGray2};
       font-size: 18px;
       font-style: normal;
       font-weight: 500;
@@ -42,7 +41,7 @@ export const APIInfoContainer = styled.div`
   }
 
   span {
-    color: #8C9CAD;
+    color: ${props => props.theme.colors.mediumGray2};
     font-size: 14px;
     font-style: normal;
     font-weight: 400;

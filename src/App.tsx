@@ -5,6 +5,8 @@ import { Header } from "./components/Header"
 import { Main } from "./components/Main"
 import { Resultado } from "./components/Resultado"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { ThemeProvider } from "styled-components"
+import defaultTheme from "./styles/themes/defaultTheme"
 
 const queryClient = new QueryClient()
 
@@ -15,15 +17,15 @@ function App() {
   const [submited, setSubmited] = useState(false)
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <Main>
-        <Header />
-        <Elipse />
-        {submited ? <Resultado valor={valor} taxa={taxa} tipo={tipo} setSubmited={setSubmited} /> : <Form setSubmited={setSubmited} setValor={setValor} setTaxa={setTaxa} setTipo={setTipo} />}
-        {/* <Form />
-        <Resultado /> */}
-      </Main>
-    </QueryClientProvider>
+    <ThemeProvider theme={defaultTheme}>
+      <QueryClientProvider client={queryClient}>
+        <Main>
+          <Header />
+          <Elipse />
+          {submited ? <Resultado valor={valor} taxa={taxa} tipo={tipo} setSubmited={setSubmited} /> : <Form setSubmited={setSubmited} setValor={setValor} setTaxa={setTaxa} setTipo={setTipo} />}
+        </Main>
+      </QueryClientProvider>
+    </ThemeProvider>
   )
 }
 
