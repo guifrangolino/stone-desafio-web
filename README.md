@@ -1,6 +1,11 @@
 # Desafio da Stone - Aplicação de Conversão de Dólar para Real
 
+![Desafio da Stone](./preview.png)
+
 Este é um desafio proposto pela Stone, que tem como objetivo criar uma aplicação web para converter valores de dólar para real usando a API de moedas. Neste projeto, utilizamos React, TypeScript, React Query, Axios, Styled Components e a biblioteca de testes Vitest.
+
+[Link do Site](stone-desafio-web.vercel.app)
+[Repositório do Desafio](https://github.com/stone-payments/template-desafio-web/tree/main#comprando-com-dinheiro)
 
 ## Visão Geral
 
